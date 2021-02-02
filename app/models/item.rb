@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :item
   has_one :address
   has_one_attached :image
+  
 
   with_options presence: true do
     validates :image
