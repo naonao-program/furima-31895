@@ -24,4 +24,5 @@ class Item < ApplicationRecord
     validates :postage_id
     validates :region_id
     validates :shipping_date_id
+  end
 end
