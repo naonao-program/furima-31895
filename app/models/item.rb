@@ -13,7 +13,7 @@ class Item < ApplicationRecord
     validates :postage_id
     validates :region_id
     validates :shipping_date_id
-    validates :price, numericality: true, inclusion: { in: 300..9999999 },/\A[0-9]+\z/
+    validates :price, numericality: true, inclusion: { in: 300..9999999 }
     validates :user
   end
 end
