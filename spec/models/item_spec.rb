@@ -88,6 +88,11 @@ describe '商品出品' do
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not included in the list")
     end
+    it 'priceが全角数字では出品できない' do
+      @item.price = '４００'
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price is not included in the list")
+    end
   end
 end
 end
