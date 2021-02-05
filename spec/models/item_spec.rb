@@ -29,12 +29,12 @@ describe '商品出品' do
       expect(@item.errors.full_messages).to include("Description can't be blank")
     end
     it 'category_idが[1]では出品できない' do
-      @item.category_id = '1'
+      @item.category_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Category must be other than 1")
     end
     it 'condition_idが[1]では出品できない' do
-      @item.condition_id = '1'
+      @item.condition_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Condition must be other than 1")
     end

@@ -7,8 +7,7 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :description
-    validates :price, numericality: true, inclusion: { in: 300..9999999 }
-    validates :user
+    validates :price, numericality: true, inclusion: { in: 300..9999999 }, format: { with: /\A[0-9]+\z/}
   end
 
   with_options numericality: { other_than: 1 } do
