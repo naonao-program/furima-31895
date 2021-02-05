@@ -79,12 +79,12 @@ describe '商品出品' do
       expect(@item.errors.full_messages).to include("Price is not a number","Price is not included in the list")
     end
     it 'priceが300円以下では出品できない' do
-      @item.price = '299'
+      @item.price = 299
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not included in the list")
     end
     it 'priceが10,000,000円以上では出品できない' do
-      @item.price = '10000000'
+      @item.price = 10000000
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not included in the list")
     end
