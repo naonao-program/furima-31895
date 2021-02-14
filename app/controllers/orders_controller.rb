@@ -1,16 +1,12 @@
 class OrdersController < ApplicationController
   def index
-    @order = Order.new
+    @order_form = OrderForm.new
+    @item = Item.find(params[:item_id])
   end
   
   def create
-    @order = Order.new(order_params)
-    if @order.valid?
-      @order.save
-      return redirect_root_path
-    else
-      render 'index'
-    end
+    binding.pry
+    @order_form = Orderform.new(order_form_params)
   end
 
   private
