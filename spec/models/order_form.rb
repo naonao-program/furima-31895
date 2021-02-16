@@ -120,6 +120,11 @@ RSpec.describe Address, type: :model do
         expect(@order_form.errors.full_messages).to include("Phone number is invalid")
       end
       
+      it "tokenが空では購入できないこと" do
+        @order_form.token = nil
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Token can't be blank")
+      end
     end
   end
 end
