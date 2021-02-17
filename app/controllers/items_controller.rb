@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   before_action :redirect_root_path, only: [:edit, :update]
   def index
     @items = Item.includes(:user).order('created_at DESC')
+    @orders = Order.all
   end
 
   def new
