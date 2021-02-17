@@ -21,6 +21,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @orders = Order.all
+    @items = Item.includes(:user)
   end
 
   def edit
