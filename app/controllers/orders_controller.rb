@@ -4,7 +4,9 @@ class OrdersController < ApplicationController
 
   def index
     @order_form = OrderForm.new
-    redirect_to root_path if current_user.id == @item.user_id || Order.exists?(item_id: @item.id)
+    if current_user.id == @item.user_id || Order.exists?(item_id: @item.id)
+      redirect_to root_path
+    end
   end
 
   def create
